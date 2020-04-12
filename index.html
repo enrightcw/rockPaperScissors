@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+
+<body>
+
+    <script>
+
+        const roShamBo = ["r" , "p" , "s"];
+
+        //W, L, T
+        const scoreboard = [ 0, 0, 0];
+                
+        
+        //Loops for 10 times, displays score
+        
+
+        for (let i = 0; i < 10 ; i++ ){
+
+            let userChoice = prompt("Type in 'r', 'p', or 's'");
+
+            let num = Math.floor(Math.random() * 3);
+            let compuGuess = num;
+
+            
+
+            // var compGuess = num;
+
+            //In the event of a tie
+
+            if (userChoice == roShamBo[compuGuess] )  {
+                alert ("Computer chose " + roShamBo[compuGuess] + " you've tied!");
+                scoreboard[2]++;
+            }
+
+            //In the event the user loses
+            else if (userChoice == "r" && roShamBo[compuGuess] == "p"){
+                alert ("Computer chose " + roShamBo[compuGuess] + " you lose!");
+                scoreboard[1]++;
+            }
+
+            //In the event the user wins
+            else if (userChoice == 'r' && roShamBo[compuGuess] == 's'){
+                alert ("Computer chose " + roShamBo[compuGuess] + " you win!");
+                scoreboard[0]++;
+            }
+
+            //In the event the user loses
+            else if (userChoice == 'p' && roShamBo[compuGuess] == 's'){
+                alert ("Computer chose " + roShamBo[compuGuess] + " you lose!");
+                scoreboard[1]++;
+            }
+
+            //In the event the user wins
+            else if (userChoice == 'p' && roShamBo[compuGuess] == 'r'){
+                alert ("Computer chose " + roShamBo[compuGuess] + " you win!");
+                scoreboard[0]++;
+            }
+
+            //In the event the user loses
+            else if (userChoice == 's' && roShamBo[compuGuess] == 'r'){
+                alert ("Computer chose " + roShamBo[compuGuess] + " you lose!");
+                scoreboard[1]++;
+            }
+
+            //In the event the user wins
+            else if (userChoice == 's' && roShamBo[compuGuess] == 'p'){
+                alert ("Computer chose " + roShamBo[compuGuess] + " you win!");
+                scoreboard[0]++;
+
+            }
+            
+            
+            console.log(userChoice)
+            console.log(roShamBo[compuGuess])
+            console.log(scoreboard)
+            // var userChoice = prompt("Type in 'r', 'p', or 's'");
+            
+        }
+
+        alert ("You won " + scoreboard[0] + " times!");
+        alert ("You lost " + scoreboard[1] + " times!");
+        alert ("You tied " + scoreboard[2] + " times.");
+
+
+
+    </script>
+    
+</body>
+</html>
